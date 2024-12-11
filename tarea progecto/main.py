@@ -21,36 +21,54 @@ def calk(value,value2,value3,value4):
 def index():
     return render_template('index.html')
 
-@app.route('/<value>')
+@app.route('/<user>')
 def cuetionario_1(value):
     return render_template('cuetionario 1.html',
                            value=value)
 
-@app.route('/<value2>')
+@app.route('/<value1>')
 def cuetionario_2(value,value2):
     return render_template('cuetionario 2.html',
                            value=value,
                            value2=value2)
-@app.route('/<value3>')
-def cuetionario_3(value,value2,value3):
+@app.route('/<value2>')
+def cuetionario_3(value1,value2):
     return render_template('cuetionario 3.html',
-                           value=value,
+                           value1=value1,
                            value2=value2,
-                           value3=value3)
-@app.route('/<value4>')
-def cuetionario_4(value,value2,value3,value4):
+                           )
+@app.route('/<value3>')
+def cuetionario_4(value1,value2,value3,):
     return render_template('cuetionario 4.html',
-                           value=value,
+                           value1=value1,
                            value2=value2,
                            value3=value3,
-                           value4=value4)
+                           )
 @app.route('/<result>')
-def result(result):
-    return render_template("resultado.html")
+def resul(result,value,value2,value3,value4):
+    return render_template("resultado.html",
+                           result=calk(value=value,
+                           value2=value2,
+                           value3=value3,
+                           value4=value4))
+                           
 
 
 
 app.run(debug=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
